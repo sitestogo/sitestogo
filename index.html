@@ -18,7 +18,7 @@
             --accent-light-cyan: #22d3ee;
             --accent-purple: #8b5cf6;
             --text-light: #f1f5f9;
-            --text-muted: #94a3b8;
+            --text-muted: #cbd5e1;
             --bg-gradient-1: #0f172a;
             --bg-gradient-2: #1e293b;
         }
@@ -93,6 +93,13 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-left: 1rem;
         }
         
         .nav-links {
@@ -273,7 +280,7 @@
         /* Services Section */
         .services {
             padding: 6rem 5%;
-            background: var(--primary-dark);
+            background: rgba(30, 41, 59, 0.3);
             position: relative;
         }
         
@@ -485,7 +492,7 @@
         /* Pricing Section */
         .pricing {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--bg-gradient-2), var(--bg-gradient-1));
+            background: rgba(30, 41, 59, 0.3);
         }
         
         .pricing-grid {
@@ -810,7 +817,10 @@
     
     <!-- Navigation -->
     <nav>
-        <div class="logo">Sites To Go</div>
+        <div class="logo">
+            <span>Sites To Go</span>
+            <img src="stg-logo.png" alt="Sites To Go Logo" style="height: 40px; margin-left: 1rem; vertical-align: middle;">
+        </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -975,23 +985,7 @@
             <p>Ready to take your business online? Get in touch today</p>
         </div>
         
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
-                <p>Have a question or ready to get started? We'd love to hear from you. Reach out and let's discuss how we can help your business succeed online.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="355d5059595a75465c415046415a525a1b565a">[email&#160;protected]</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">⏰</span>
-                        <span>Mon - Fri: 9AM - 6PM</span>
-                    </div>
-                </div>
-            </div>
-            
+        <div class="contact-content" style="grid-template-columns: 1fr; max-width: 600px;">
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -1020,7 +1014,7 @@
     
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Sites To Go. Empowering local businesses with professional web presence.</p>
+        <p>&copy; 2024 Sites To Go. Empowering local businesses with professional web presence.</p>
     </footer>
     
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
