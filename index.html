@@ -169,10 +169,10 @@
             z-index: 1;
             max-width: 1400px;
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto auto;
-            gap: 2rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
@@ -180,36 +180,6 @@
         }
         
         .hero-content h1 {
-            grid-column: 1;
-            grid-row: 1;
-        }
-        
-        .hero-content .hero-description {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        
-        .hero-content .cta-buttons {
-            grid-column: 1;
-            grid-row: 3;
-        }
-        
-        .hero-content .hero-image {
-            grid-column: 2;
-            grid-row: 1 / 4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero h1 {
             font-family: 'Outfit', sans-serif;
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
@@ -219,22 +189,34 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-align: left;
         }
         
-        .hero p {
+        .hero-content .hero-description {
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: var(--text-muted);
             margin-bottom: 3rem;
             font-weight: 300;
-            text-align: left;
         }
         
-        .cta-buttons {
+        .hero-content .hero-image {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+        }
+        
+        .hero-content .cta-buttons {
             display: flex;
             gap: 1.5rem;
-            justify-content: flex-start;
             flex-wrap: wrap;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .btn {
@@ -852,8 +834,9 @@
             }
             
             .hero-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 text-align: center;
+                align-items: center;
             }
             
             .hero-content h1,
@@ -861,24 +844,47 @@
                 text-align: center;
             }
             
+            .hero-content .cta-buttons {
+                justify-content: center;
+            }
+            
             .hero-content .hero-image {
-                grid-row: 3;
+                order: 3;
+                max-width: 100%;
+            }
+            
+            .hero-content h1 {
+                order: 1;
+            }
+            
+            .hero-content .hero-description {
+                order: 2;
             }
             
             .hero-content .cta-buttons {
-                grid-row: 4;
-                justify-content: center;
+                order: 4;
             }
         }
         
         @media (max-width: 640px) {
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
             
-            .cta-buttons {
+            .hero-content .hero-image {
+                margin: 1.5rem 0;
+                width: 100%;
+            }
+            
+            .hero-content .hero-image img {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .hero-content .cta-buttons {
                 flex-direction: column;
                 align-items: stretch;
+                width: 100%;
             }
             
             .btn {
