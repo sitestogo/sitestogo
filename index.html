@@ -167,12 +167,28 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 1200px;
-            text-align: center;
+            max-width: 1400px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.5s;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         @keyframes fadeInUp {
@@ -192,6 +208,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: left;
         }
         
         .hero p {
@@ -199,15 +216,13 @@
             color: var(--text-muted);
             margin-bottom: 3rem;
             font-weight: 300;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: left;
         }
         
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
         
@@ -216,7 +231,7 @@
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 10px;
             transition: all 0.4s ease;
             cursor: pointer;
             border: none;
@@ -486,6 +501,83 @@
             color: var(--text-muted);
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 5%;
+            background: var(--primary-dark);
+            position: relative;
+        }
+        
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .testimonial-card {
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .testimonial-card.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.4s; }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 60px rgba(6, 182, 212, 0.2);
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--accent-cyan);
+        }
+        
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author strong {
+            display: block;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-author span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
         /* Pricing Section */
         .pricing {
             padding: 6rem 5%;
@@ -532,7 +624,7 @@
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             color: white;
             padding: 0.5rem 1.5rem;
-            border-radius: 12px;
+            border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -742,6 +834,28 @@
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .hero h1,
+            .hero p {
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
         }
         
         @media (max-width: 640px) {
@@ -846,10 +960,15 @@
         <div class="floating-element floating-2"></div>
         
         <div class="hero-content">
-            <h1>Every Local Business Deserves a Website That Works</h1>
-            <p>Professional one-page websites that help local businesses establish their online presence and attract more customers.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get Your Website</a>
+            <div class="hero-text">
+                <h1>Every Local Business Deserves a Website That Works</h1>
+                <p>Professional one-page websites that help local businesses establish their online presence and attract more customers.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Your Website</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="banner.jpg" alt="Website Mockup" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);">
             </div>
         </div>
     </section>
@@ -932,6 +1051,49 @@
                     <p>Your website goes live on GitHub Pages. We handle all the technical details and provide you with everything you need.</p>
                 </div>
                 <div class="process-number">4</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Real feedback from local businesses we've helped get online</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="lucy.png" alt="Lucy Chen">
+                </div>
+                <p class="testimonial-text">"Sites To Go created a beautiful website for my café in less than two weeks. The SEO setup has already brought in new customers finding us on Google!"</p>
+                <div class="testimonial-author">
+                    <strong>Lucy Chen</strong>
+                    <span>Owner, Morning Brew Café</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="scott.png" alt="Scott Halpern">
+                </div>
+                <p class="testimonial-text">"As a tradesperson, I never thought I needed a website. Now my phone doesn't stop ringing with new leads. Best investment I've made for my business."</p>
+                <div class="testimonial-author">
+                    <strong>Scott Halpern</strong>
+                    <span>Halpern Plumbing Services</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="emma.png" alt="Emma Thompson">
+                </div>
+                <p class="testimonial-text">"Professional, affordable, and fast. They handled everything including the domain setup. I couldn't be happier with my new site!"</p>
+                <div class="testimonial-author">
+                    <strong>Emma Thompson</strong>
+                    <span>Thompson Yoga Studio</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1071,7 +1233,7 @@
         }, observerOptions);
         
         // Observe all animated elements
-        document.querySelectorAll('.service-card, .process-step, .pricing-card').forEach(el => {
+        document.querySelectorAll('.service-card, .process-step, .testimonial-card, .pricing-card').forEach(el => {
             observer.observe(el);
         });
         
