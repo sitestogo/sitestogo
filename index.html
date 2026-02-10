@@ -144,7 +144,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 0 5%;
+            padding: 100px 5% 0 5%;
         }
         
         .hero::before {
@@ -169,26 +169,37 @@
             z-index: 1;
             max-width: 1400px;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 2rem 4rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.5s;
         }
         
-        .hero-text {
-            flex: 1;
-            max-width: 600px;
+        .hero-content h1 {
+            grid-column: 1;
+            grid-row: 1;
         }
         
-        .hero-image {
-            flex: 1;
+        .hero-content .hero-description {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .hero-content .cta-buttons {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        
+        .hero-content .hero-image {
+            grid-column: 2;
+            grid-row: 1 / 4;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
         
         @keyframes fadeInUp {
@@ -800,6 +811,7 @@
         footer p {
             color: var(--text-muted);
             margin: 0.25rem 0;
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
@@ -840,20 +852,21 @@
             }
             
             .hero-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 text-align: center;
             }
             
-            .hero-text {
-                max-width: 100%;
-            }
-            
-            .hero h1,
-            .hero p {
+            .hero-content h1,
+            .hero-content .hero-description {
                 text-align: center;
             }
             
-            .cta-buttons {
+            .hero-content .hero-image {
+                grid-row: 3;
+            }
+            
+            .hero-content .cta-buttons {
+                grid-row: 4;
                 justify-content: center;
             }
         }
@@ -960,15 +973,13 @@
         <div class="floating-element floating-2"></div>
         
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>Every Local Business Deserves a Website That Works</h1>
-                <p>Professional one-page websites that help local businesses establish their online presence and attract more customers.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Your Website</a>
-                </div>
-            </div>
+            <h1>Every Local Business Deserves a Website That Works</h1>
+            <p class="hero-description">Professional one-page websites that help local businesses establish their online presence and attract more customers.</p>
             <div class="hero-image">
                 <img src="banner.jpg" alt="Website Mockup" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);">
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Your Website</a>
             </div>
         </div>
     </section>
@@ -1183,8 +1194,7 @@
     <!-- Footer -->
     <footer>
         <img src="stg-logo.png" alt="Sites To Go Logo" style="height: 50px; margin-bottom: 1rem;">
-        <p>&copy; 2026 Sites To Go.</p>
-        <p>Empowering local businesses with professional web presence.</p>
+        <p>&copy; 2026 Sites To Go. Empowering local businesses with professional web presence.</p>
     </footer>
     
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
