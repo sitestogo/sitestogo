@@ -99,7 +99,7 @@
         
         .logo img {
             height: 40px;
-            margin-left: 1rem;
+            margin-right: 1rem;
         }
         
         .nav-links {
@@ -216,7 +216,7 @@
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 12px;
             transition: all 0.4s ease;
             cursor: pointer;
             border: none;
@@ -311,12 +311,12 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
         
         .service-card {
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
             border-radius: 20px;
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
             border: 1px solid rgba(6, 182, 212, 0.1);
@@ -360,26 +360,23 @@
         }
         
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            transition: transform 0.5s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
         }
         
         .service-card h3 {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--accent-light-cyan);
+            display: flex;
+            align-items: center;
         }
         
         .service-card p {
             color: var(--text-muted);
             line-height: 1.8;
+            font-size: 0.95rem;
         }
         
         /* Process Section */
@@ -535,7 +532,7 @@
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             color: white;
             padding: 0.5rem 1.5rem;
-            border-radius: 50px;
+            border-radius: 12px;
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -698,10 +695,19 @@
             background: var(--secondary-dark);
             text-align: center;
             border-top: 1px solid rgba(6, 182, 212, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        footer img {
+            height: 50px;
+            margin-bottom: 1rem;
         }
         
         footer p {
             color: var(--text-muted);
+            margin: 0.25rem 0;
         }
         
         /* Responsive Design */
@@ -734,7 +740,7 @@
             }
             
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -750,6 +756,10 @@
             
             .btn {
                 width: 100%;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
             }
             
             .pricing-grid {
@@ -818,8 +828,8 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">
-            <span>Sites To Go</span>
-            <img src="stg-logo.png" alt="Sites To Go Logo" style="height: 40px; margin-left: 1rem; vertical-align: middle;">
+            <img src="stg-logo.png" alt="Sites To Go Logo" style="height: 40px; margin-right: 1rem; vertical-align: middle;">
+            Sites To Go
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -853,38 +863,32 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Professional Design</h3>
+                <h3><span class="service-icon">🎨</span> Professional Design</h3>
                 <p>Modern, clean websites tailored to showcase your business and attract your ideal customers.</p>
             </div>
             
             <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>Mobile Responsive</h3>
+                <h3><span class="service-icon">📱</span> Mobile Responsive</h3>
                 <p>Your website will look perfect on every device - phones, tablets, and desktops. Reach customers anywhere.</p>
             </div>
             
             <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>SEO Optimized</h3>
+                <h3><span class="service-icon">🔍</span> SEO Optimized</h3>
                 <p>Every website is built with search engine optimization in mind, helping customers find you on Google.</p>
             </div>
             
             <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Quick Turnaround</h3>
+                <h3><span class="service-icon">⚡</span> Quick Turnaround</h3>
                 <p>Most websites delivered within 7-14 days from initial consultation.</p>
             </div>
             
             <div class="service-card">
-                <div class="service-icon">💰</div>
-                <h3>Affordable Pricing</h3>
+                <h3><span class="service-icon">💰</span> Affordable Pricing</h3>
                 <p>Professional websites at prices that work for local businesses.</p>
             </div>
             
             <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Designed for Results</h3>
+                <h3><span class="service-icon">🎯</span> Designed for Results</h3>
                 <p>Every website is optimized to convert visitors into customers.</p>
             </div>
         </div>
@@ -1016,7 +1020,9 @@
     
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Sites To Go. Empowering local businesses with professional web presence.</p>
+        <img src="stg-logo.png" alt="Sites To Go Logo" style="height: 50px; margin-bottom: 1rem;">
+        <p>&copy; 2026 Sites To Go.</p>
+        <p>Empowering local businesses with professional web presence.</p>
     </footer>
     
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
