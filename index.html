@@ -172,20 +172,13 @@
             max-width: 1400px;
             width: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
+            gap: 3rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.5s;
-        }
-        
-        .hero-text {
-            flex: 1;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
         }
         
         .hero-content h1 {
@@ -193,18 +186,19 @@
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
             background: linear-gradient(135deg, #ffffff, var(--accent-light-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: center;
+            width: 100%;
         }
         
-        .hero-content .hero-description {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-weight: 300;
+        .hero-middle {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            width: 100%;
         }
         
         .hero-content .hero-image {
@@ -212,13 +206,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 600px;
+        }
+        
+        .hero-content .hero-description {
+            flex: 1;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.8;
         }
         
         .hero-content .cta-buttons {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
         
         @keyframes fadeInUp {
@@ -842,31 +844,17 @@
                 grid-template-columns: 1fr;
             }
             
-            .hero-content {
+            .hero-middle {
                 flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .hero-content h1 {
                 text-align: center;
-                align-items: center;
             }
             
-            .hero-text {
-                max-width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero-content h1,
             .hero-content .hero-description {
                 text-align: center;
-            }
-            
-            .hero-text .cta-buttons {
-                justify-content: center;
-            }
-            
-            .hero-image {
-                order: -1;
-                margin-bottom: 2rem;
             }
         }
         
@@ -875,19 +863,19 @@
                 font-size: 2.5rem;
             }
             
-            .hero-text {
-                order: 1;
-            }
-            
-            .hero-image {
-                order: 2;
-                margin: 1.5rem 0;
-                width: 100%;
+            .hero-middle {
+                gap: 1.5rem;
             }
             
             .hero-content .hero-image img {
                 width: 100%;
                 max-width: 100%;
+            }
+            
+            .hero-content .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
             }
             
             .btn {
@@ -982,15 +970,15 @@
         <div class="floating-element floating-2"></div>
         
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>Every Local Business Deserves a Website That Works</h1>
-                <p class="hero-description">Professional one-page websites that help local businesses establish their online presence and attract more customers.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Your Website</a>
+            <h1>Every Local Business Deserves a Website That Works</h1>
+            <div class="hero-middle">
+                <div class="hero-image">
+                    <img src="banner.jpg" alt="Website Mockup" style="width: 100%; max-width: 500px; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);">
                 </div>
+                <p class="hero-description">Professional one-page websites that help local businesses establish their online presence and attract more customers.</p>
             </div>
-            <div class="hero-image">
-                <img src="banner.jpg" alt="Website Mockup" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);">
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Your Website</a>
             </div>
         </div>
     </section>
