@@ -986,7 +986,9 @@
         </div>
         
         <div class="contact-content" style="grid-template-columns: 1fr; max-width: 600px;">
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="288f7004-fd48-49ed-93e3-cf357204a651">
+                
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
@@ -1068,21 +1070,38 @@
         });
         
         // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
             
-            // Here you would typically send the data to a server
-            console.log('Form submitted:', data);
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
             
-            // Show success message (you can customize this)
-            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-            
-            // Reset form
-            e.target.reset();
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                    form.reset();
+                } else {
+                    alert('Oops! Something went wrong. Please try again or email us directly at hello@sitestogo.co');
+                }
+            } catch (error) {
+                alert('Oops! Something went wrong. Please try again or email us directly at hello@sitestogo.co');
+            } finally {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
         });
         
         // Smooth scroll for navigation links
