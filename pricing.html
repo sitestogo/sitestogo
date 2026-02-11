@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Packages | Sites To Go</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-cyan: #06b6d4;
+            --accent-light-cyan: #22d3ee;
+            --accent-purple: #8b5cf6;
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-sites {
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+        }
+        
+        .logo-togo {
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+            margin-left: 0.15em;
+        }
+        
+        .logo-togo::after {
+            content: " »";
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 140px 5% 6rem 5%;
+        }
+        
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, var(--accent-light-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .intro {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Step Sections */
+        .step-section {
+            margin-bottom: 6rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+        
+        .step-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 3rem;
+            padding-bottom: 0;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            line-height: 1;
+        }
+        
+        .step-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .step-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Package Comparison */
+        .package-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .package-box {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            border: 2px solid rgba(6, 182, 212, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .package-box.featured {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(30, 41, 59, 0.5));
+        }
+        
+        .package-box h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-light-cyan);
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+        }
+        
+        .package-sections {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .package-extra {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        
+        /* Info Banner */
+        .info-banner {
+            background: rgba(6, 182, 212, 0.1);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        
+        .info-banner p {
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.8;
+        }
+        
+        /* Auto Included Grid */
+        .auto-included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .auto-item {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .auto-item::before {
+            content: '✓';
+            color: var(--accent-cyan);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .auto-item span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .subsection-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Section Grid */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .section-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+        
+        .section-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Addon Grid */
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .addon-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .addon-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+        
+        .addon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+        
+        .addon-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .addon-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            white-space: nowrap;
+        }
+        
+        .addon-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .category-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+            margin: 3rem 0 1.5rem 0;
+            text-align: center;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        
+        .cta-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+        
+        footer {
+            padding: 3rem 5%;
+            background: var(--secondary-dark);
+            text-align: center;
+            border-top: 1px solid rgba(6, 182, 212, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 4rem;
+        }
+        
+        footer .logo {
+            margin-bottom: 1rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            margin: 0.25rem 0;
+            font-size: 0.8rem;
+        }
+        
+        footer p a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        
+        footer p a:hover {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .package-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .addon-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .addon-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .step-header {
+                gap: 0.75rem;
+            }
+            
+            .step-number {
+                font-size: 2.5rem;
+            }
+            
+            .step-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </a>
+    </nav>
+    
+    <div class="content">
+        <h1>Pricing & Packages</h1>
+        <p class="intro">Simple, transparent pricing. Choose your plan, pick your sections, and add any extras you need.</p>
+        
+        <!-- STEP 1: Choose Your Plan -->
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2 class="step-title">Choose Your Plan</h2>
+            </div>
+            <p class="step-subtitle">Start with Starter or go with Plus for more sections and enhanced SEO.</p>
+            
+            <div class="package-comparison">
+                <div class="package-box">
+                    <h3>Starter</h3>
+                    <div class="package-price">$649</div>
+                    <div class="package-sections"><strong>Choose 4 sections</strong></div>
+                    <div class="package-extra">+ 1 revision round</div>
+                </div>
+                
+                <div class="package-box featured">
+                    <h3>Plus</h3>
+                    <div class="package-price">$849</div>
+                    <div class="package-sections"><strong>Choose 6 sections</strong></div>
+                    <div class="package-extra">+ Enhanced SEO + 2 revision rounds</div>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">What's Included in Both Plans</h3>
+            
+            <div class="auto-included-grid">
+                <div class="auto-item"><span>Basic header (business name, tagline, navigation)</span></div>
+                <div class="auto-item"><span>Contact form with spam protection</span></div>
+                <div class="auto-item"><span>Google Maps location embed</span></div>
+                <div class="auto-item"><span>Click-to-call phone & email buttons</span></div>
+                <div class="auto-item"><span>Opening hours display</span></div>
+                <div class="auto-item"><span>Social media icon links</span></div>
+                <div class="auto-item"><span>Mobile-responsive design</span></div>
+                <div class="auto-item"><span>SSL security certificate</span></div>
+                <div class="auto-item"><span>Hosting included (no monthly fees)</span></div>
+                <div class="auto-item"><span>Domain connection & setup guidance</span></div>
+                <div class="auto-item"><span>Basic image optimization (resize, compress)</span></div>
+                <div class="auto-item"><span>Privacy & Terms template pages</span></div>
+            </div>
+            
+            <div class="info-banner">
+                <p><strong>Plus package extras:</strong> Enhanced SEO setup, Google Analytics, Search Console submission, schema markup, sitemap & robots.txt, and 2 revision rounds (vs 1 in Starter).</p>
+            </div>
+        </section>
+        
+        <!-- STEP 2: Choose Your Sections -->
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2 class="step-title">Choose Your Sections</h2>
+            </div>
+            <p class="step-subtitle">Pick 4 sections for Starter or 6 sections for Plus. Each section is a distinct part of your one-page website.</p>
+            
+            <div class="section-grid">
+                <div class="section-card">
+                    <h4>Hero Section</h4>
+                    <p>Full-width intro with background image, headline, description, and call-to-action button.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Services</h4>
+                    <p>Showcase what you offer with 3-6 service cards, each with icon, title, and description.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>About / Company Story</h4>
+                    <p>Your story, mission, company history, or what makes you different.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Contact Section</h4>
+                    <p>Full contact section with form, map, address, and business hours (beyond basic header).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Testimonials</h4>
+                    <p>Customer reviews with photos and names (3 reviews in Starter, 6 in Plus).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Gallery</h4>
+                    <p>Photo showcase in a grid layout (5-10 images basic, 20+ extended is addon).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Team / Meet the Owner</h4>
+                    <p>Staff or owner profiles with photos and bios (1 person spotlight or full team of 3-6 people).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Pricing / Menu</h4>
+                    <p>Display your pricing, packages, or services menu in a clear table format.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Portfolio / Work Examples</h4>
+                    <p>Showcase previous projects or work with images and descriptions (3-6 examples).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>FAQ</h4>
+                    <p>Common questions with accordion-style answers (up to 10 questions).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Process / How It Works</h4>
+                    <p>Your workflow or process explained in 3-4 clear steps.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Before/After Showcase</h4>
+                    <p>Interactive slider comparing before and after images (ideal for transformations, renovations, treatments).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Stats / Social Proof</h4>
+                    <p>Numbers that build trust (e.g., years in business, happy customers, projects completed).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Featured Products</h4>
+                    <p>Display 3-6 products with images and descriptions (not ecommerce - display only, no shopping cart).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Certifications / Awards</h4>
+                    <p>Display licenses, industry memberships, accreditations, or awards with logos.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Service Area</h4>
+                    <p>Show your coverage area with a map or list of suburbs/regions you serve.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h4>Special Offers</h4>
+                    <p>Highlight current promotions, seasonal deals, or limited-time offers.</p>
+                </div>
+            </div>
+            
+            <div class="info-banner">
+                <p><strong>Need more sections?</strong> Extra sections beyond your package limit are $100 each. We recommend choosing your package based on how many sections you'll need upfront.</p>
+            </div>
+        </section>
+        
+        <!-- STEP 3: Add Extras (Optional) -->
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2 class="step-title">Add Extras (Optional)</h2>
+            </div>
+            <p class="step-subtitle">Add these now or anytime after your website launches.</p>
+            
+            <h3 class="category-subtitle">Beyond Your Package</h3>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Extra Section</h4>
+                        <span class="addon-price">$100</span>
+                    </div>
+                    <p class="addon-description">Add another section beyond your package limit.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Additional Page</h4>
+                        <span class="addon-price">$450</span>
+                    </div>
+                    <p class="addon-description">Add a separate page with up to 4 sections (e.g., detailed services page, standalone gallery).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Extended Gallery</h4>
+                        <span class="addon-price">$125</span>
+                    </div>
+                    <p class="addon-description">Professional photo gallery with lightbox for 20+ images (basic 5-10 image gallery included in Gallery section).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Additional Testimonials</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Expand testimonials beyond what's included (3 in Starter, 6 in Plus).</p>
+                </div>
+            </div>
+            
+            <h3 class="category-subtitle">Integrations & Tools</h3>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Booking System</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Integrate Calendly, Acuity, or similar booking tools (embed code required).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">WhatsApp Click-to-Chat</h4>
+                        <span class="addon-price">$50</span>
+                    </div>
+                    <p class="addon-description">Floating WhatsApp button for direct customer messaging.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Email Newsletter Signup</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Mailchimp or similar email signup form integration.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Live Chat Widget</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Tawk.to or similar free live chat for instant messaging (you create account, we integrate).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Custom Contact Form</h4>
+                        <span class="addon-price">$100</span>
+                    </div>
+                    <p class="addon-description">Multi-step forms, conditional fields, or file uploads beyond basic contact form.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">PDF Download Button</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Add downloadable PDF (menu, price list, brochure).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Cookie Consent Banner</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">GDPR-compliant cookie consent popup for tracking/analytics.</p>
+                </div>
+            </div>
+            
+            <h3 class="category-subtitle">Content Assistance</h3>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Stock Photo Sourcing</h4>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">We find up to 5 professional stock photos relevant to your business.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Photo Editing</h4>
+                        <span class="addon-price">$50</span>
+                    </div>
+                    <p class="addon-description">Color correction, brightness/contrast adjustment (up to 10 images).</p>
+                </div>
+            </div>
+            
+            <h3 class="category-subtitle">Updates & Support</h3>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Content Updates</h4>
+                        <span class="addon-price">$85/hour</span>
+                    </div>
+                    <p class="addon-description">Post-launch text, image, or contact updates.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Extra Revision Round</h4>
+                        <span class="addon-price">$125</span>
+                    </div>
+                    <p class="addon-description">Additional design changes during build (up to 10 feedback points). Larger changes quoted separately.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h4 class="addon-name">Rush Service</h4>
+                        <span class="addon-price">+50%</span>
+                    </div>
+                    <p class="addon-description">Fast-track any add-on to completion within 3 business days.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="info-banner">
+            <p><strong>How it works:</strong> Let us know which package, sections, and add-ons you'd like when you enquire. We'll confirm everything before starting work, and you can always add extras after your site launches.</p>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Choose your package, pick your sections, and let's build your website.</p>
+            <a href="index.html#contact" class="btn">Get Your Website</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </div>
+        <p>
+            &copy; <span id="year"></span> Sites To Go • 
+            <a href="privacy.html">Privacy</a> • 
+            <a href="terms.html">Terms</a>
+            <br>
+            Empowering local businesses with simple, professional websites.
+        </p>
+    </footer>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
