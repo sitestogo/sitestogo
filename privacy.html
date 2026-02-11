@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Sites To Go</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-cyan: #06b6d4;
+            --accent-light-cyan: #22d3ee;
+            --accent-purple: #8b5cf6;
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-sites {
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+        }
+        
+        .logo-togo {
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+            margin-left: 0.15em;
+        }
+        
+        .logo-togo::after {
+            content: " »";
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 5% 6rem 5%;
+        }
+        
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, var(--accent-light-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .last-updated {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-light-cyan);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        ul {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            padding: 3rem 5%;
+            background: var(--secondary-dark);
+            text-align: center;
+            border-top: 1px solid rgba(6, 182, 212, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        footer .logo {
+            margin-bottom: 1rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            margin: 0.25rem 0;
+            font-size: 0.8rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+            font-size: 0.85rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </a>
+    </nav>
+    
+    <div class="content">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: <span id="year"></span></p>
+        
+        <p>Sites To Go ("we", "us", or "our") operates sitestogo.co. This page explains how we collect, use, and protect your personal information when you use our website or services.</p>
+        
+        <h2>Information We Collect</h2>
+        <p>When you contact us through our website, we collect:</p>
+        <ul>
+            <li>Your name</li>
+            <li>Email address</li>
+            <li>Phone number (if provided)</li>
+            <li>Business name</li>
+            <li>Any message or project details you share with us</li>
+        </ul>
+        
+        <h2>How We Use Your Information</h2>
+        <p>We use the information you provide to:</p>
+        <ul>
+            <li>Respond to your enquiries about our services</li>
+            <li>Provide quotes and discuss project requirements</li>
+            <li>Deliver website design and development services</li>
+            <li>Communicate with you about your project</li>
+        </ul>
+        <p>We will never sell, rent, or share your personal information with third parties for marketing purposes.</p>
+        
+        <h2>How We Store Your Information</h2>
+        <p>Information submitted through our contact form is delivered to us via email and stored securely. Your website files are hosted on secure servers. We take reasonable measures to protect your information from unauthorized access or disclosure.</p>
+        
+        <h2>Data Retention</h2>
+        <p>We retain your personal information only as long as necessary to provide our services and fulfill the purposes outlined in this policy. Project-related information is kept for business records and may be retained for up to 7 years for tax and legal compliance purposes.</p>
+        
+        <h2>Your Rights</h2>
+        <p>Under Australian privacy law, you have the right to:</p>
+        <ul>
+            <li>Access the personal information we hold about you</li>
+            <li>Request correction of your personal information</li>
+            <li>Request deletion of your personal information (subject to legal requirements)</li>
+        </ul>
+        
+        <h2>Cookies and Tracking</h2>
+        <p>Our website does not use cookies or third-party tracking tools. We do not collect analytics or browsing data.</p>
+        
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or how we handle your personal information, please contact us at:</p>
+        <p>Email: <a href="mailto:hello@sitestogo.co">hello@sitestogo.co</a></p>
+        
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+    </div>
+    
+    <footer>
+        <div class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p>&copy; <span id="yearFooter"></span> Sites To Go • Empowering local businesses with simple, professional websites.</p>
+    </footer>
+    
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById('year').textContent = year;
+        document.getElementById('yearFooter').textContent = year;
+    </script>
+</body>
+</html>
