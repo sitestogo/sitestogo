@@ -701,6 +701,26 @@
 
         footer p a { color: var(--text-muted); text-decoration: none; }
         footer p a:hover { color: #ffffff; text-decoration: underline; }
+.footer-logo {
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.footer-logo .logo-text {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.footer-logo .logo-text span {
+    text-align: left;
+}
+
+@media (max-width: 640px) {
+    .footer-logo .logo-img {
+        height: 36px;
+    }
+}
+
 
         /* Responsive */
         @media (max-width: 968px) {
@@ -1014,12 +1034,13 @@
     </section>
 
     <footer>
-        <div class="logo">
-            <div class="logo-text">
-                <strong>Pro Mow Lawns</strong>
-                <span>Ipswich, QLD</span>
-            </div>
-        </div>
+        <div class="logo footer-logo">
+    <img src="pro-mow.png" alt="Pro Mow Lawns logo" class="logo-img" />
+    <div class="logo-text">
+        <strong>Pro Mow Lawns</strong>
+        <span>Ipswich, QLD</span>
+    </div>
+</div>
 
         <p>
             © <span id="year"></span> Pro Mow Lawns ·
