@@ -668,8 +668,8 @@
             transform: translateX(-50%);
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.5rem 2rem;
+            border-radius: 10px;
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -970,10 +970,10 @@
         /* Scroll to top button */
         .scroll-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 40px;
-            height: 40px;
+            bottom: 1.2rem;
+            right: 1.2rem;
+            width: 32px;
+            height: 32px;
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             border-radius: 50%;
             display: flex;
@@ -1199,7 +1199,7 @@
             
             <div class="service-card">
                 <h3><span class="service-icon">⚡</span> Fast & Straight-forward</h3>
-                <p>Most websites are ready ready to go within 7-14 days after the initial consultation.</p>
+                <p>Most websites are ready to go within 7-14 days after the initial consultation.</p>
             </div>
             
             <div class="service-card">
@@ -1270,7 +1270,6 @@
                 <ul class="pricing-features">
                     <li>One-page website</li>
                     <li>Up to 3 website sections</li>
-                    <li>Mobile-friendly design</li>
                     <li>Contact form (email delivery + spam protection)</li>
                     <li>Custom domain connection</li>
                     <li>1 round of revisions</li>
@@ -1284,13 +1283,12 @@
                 </div>
                 <div class="pricing-price">$799</div>
                 <p class="pricing-period">One-time payment</p>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Everything in Starter, with stronger foundations for being found on Google. Best for businesses that want a more polished site and better long-term visibility.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Everything in Starter, with a more robust setup for Google and long-term growth. Best for businesses that want a more polished site and stronger foundations from day one.</p>
                 <ul class="pricing-features">
                     <li>Everything in Starter</li>
                     <li>Up to 5 website sections</li>
-                    <li>Google Search Console setup</li>
-                    <li>Google Analytics setup</li>
-                    <li>Sitemap.xml & robots.txt creation</li>
+                    <li>Google indexing & verification setup</li>
+                    <li>Search-friendly site structure & metadata</li>
                     <li>2 total rounds of revisions</li>
                 </ul>
                 <a href="#contact" class="btn btn-primary">Get Started</a>
@@ -1355,7 +1353,7 @@
             <h2>Ready To Get Your Business Online?</h2>
             <p>If you don’t have a website yet, we make it easy to get one without stress, tech headaches, or long sales calls. No obligation – just a quick chat to see if it’s a good fit.</p>
             <br>
-            <p>Australian-owned, serving local businesses nationwide • ABN: 45 782 652 688</p>
+            <p>Australian-owned, serving local businesses nationwide.</p>
         </div>
         
         <div class="contact-content">
@@ -1528,7 +1526,10 @@
             <span class="logo-sites">Sites</span>
             <span class="logo-togo">to Go</span>
         </div>
-        <p><br>&copy; 2026 Sites To Go • Empowering local businesses with simple, professional websites.</p>
+        <p>
+            <br>&copy; <span id="year"></span> Sites To Go • Empowering local businesses with simple, professional websites.
+            <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+        </p>
     </footer>
     
     <script>
