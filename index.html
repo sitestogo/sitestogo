@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sites To Go - Professional Websites for Local Businesses</title>
+<title>Simple One-Page Websites for Local Businesses | Sites To Go</title>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-<meta name="description" content="Sites To Go builds simple, professional one-page websites for local Australian businesses. No subscriptions, no lock-ins – just a clean site that helps customers find you and get in touch.">
+<meta name="description" content="Simple, clean and professional one-page websites for local Australian businesses. One-off price, no subscriptions or lock-ins.">
 
 <link rel="canonical" href="https://www.sitestogo.co/">
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Sites To Go – Professional Websites for Local Businesses">
-<meta property="og:description" content="Simple, professional one-page websites for local Australian businesses. No subscriptions, no lock-ins.">
+<meta property="og:description" content="Simple, clean and professional one-page websites for local Australian businesses. One-off price, no subscriptions or lock-ins.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.sitestogo.co/">
 <meta property="og:image" content="https://www.sitestogo.co/assets/og.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sites To Go – Professional Websites for Local Businesses">
-<meta name="twitter:description" content="Simple, professional one-page websites for local Australian businesses. No subscriptions, no lock-ins.">
+<meta name="twitter:description" content="Simple, clean and professional one-page websites for local Australian businesses. One-off price, no subscriptions or lock-ins.">
 <meta name="twitter:image" content="https://www.sitestogo.co/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -223,8 +223,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-align: center;
-            margin-bottom: 2rem;
             width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
         }
         
         .hero-middle {
@@ -1006,8 +1009,9 @@
         
         .notification {
             position: fixed;
-            top: 100px;
-            right: 2rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.98);
             background: rgba(30, 41, 59, 0.95);
             color: var(--text-light);
             padding: 1rem 1.5rem;
@@ -1016,14 +1020,14 @@
             box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
             z-index: 10001;
             opacity: 0;
-            transform: translateX(400px);
-            transition: all 0.4s ease;
-            max-width: 400px;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            max-width: min(400px, calc(100vw - 2rem));
+            text-align: center;
             backdrop-filter: blur(10px);
         }
         .notification.show {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .soft-divider {
@@ -1031,10 +1035,6 @@
             border-top: 4px solid #ffffff14;
         }
 
-        .notification.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
         
         /* FAQ Section */
         .faq {
@@ -1143,7 +1143,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">What We Do</a></li>
+            <li><a href="#services">What You Get</a></li>
             <li><a href="#process">How It Works</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1156,16 +1156,16 @@
         <div class="floating-element floating-2"></div>
         
         <div class="hero-content">
-            <h1>Simple, professional websites for Australian local businesses</h1>
+            <h1>Simple one-page websites for local businesses</h1>
             <div class="hero-middle">
                 <div class="hero-image">
                     <img src="assets/banner.jpg" alt="Example one-page website design for a local business" style="width: 100%; max-width: 500px; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);">
                 </div>
                 <div class="hero-text-section">
-                    <p class="hero-description">Clean, one-page websites that help customers find you and get in touch — without subscriptions, lock-ins, or unnecessary complexity.<br><br>Built by Aussies, for Aussies. 🐨</p>
+                    <p class="hero-description">Clean and professional. One-off price. No subscriptions. No lock-ins. No unnecessary complexity.</p><br>
 
                     <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Get Your Business Online</a>
+                        <a href="#contact" class="btn btn-primary">Get your website</a>
                     </div>
                 </div>
             </div>
@@ -1177,24 +1177,24 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-header">
-            <h2>What We Do</h2>
-            <p>Web solutions tailored for local businesses.</p>
+            <h2>What You Get</h2>
+            <p>Everything you need in a simple, one-page website, purpose-built for your business and customised with your details, branding, and content.</p>
         </div>
         
         <div class="services-grid">
             <div class="service-card">
                 <h3><span class="service-icon">🎨</span> Professional Design</h3>
-                <p>A modern one-page site that clearly shows who you are, what you do, and how customers can contact you.</p>
+                <p>A clean one-page site that clearly shows who you are, what you do, and how customers can contact you.</p>
             </div>
             
             <div class="service-card">
                 <h3><span class="service-icon">📱</span> Mobile Friendly</h3>
-                <p>In an age where customers mostly use their phone, your website will look great on mobile, tablet and desktop.</p>
+                <p>Your website will look great on mobile, tablet, and desktop.</p>
             </div>
             
             <div class="service-card">
                 <h3><span class="service-icon">🔍</span> Set Up For Google</h3>
-                <p>Built with search engine fundamentals, so customers can find you on Google.</p>
+                <p>Built with the basics Google expects – clean headings, metadata, fast load times, and indexing set up.</p>
             </div>
             
             <div class="service-card">
@@ -1204,14 +1204,15 @@
             
             <div class="service-card">
                 <h3><span class="service-icon">🚫</span> No ongoing fees with us</h3>
-                <p>Hosting is included. There are no monthly payments to us. You own your domain and can move your website at any time if you choose.</p>
+                <p>Hosting is included. No monthly fees from us. You own your domain and can move your website at any time.</p>
             </div>
             
             <div class="service-card">
                 <h3><span class="service-icon">🎯</span> Designed to Help You Get Enquiries</h3>
-                <p>Clear layout, simple messaging, and strong calls to action — designed to turn visitors into enquiries.</p>
+                <p>Clear layout and strong calls to action like tap-to-call and enquiry forms to turn visitors into enquiries.</p>
             </div>
         </div>
+        
     </section>
 
     <div class="soft-divider"></div>
@@ -1248,6 +1249,7 @@
                 <div class="process-number">3</div>
             </div>
         </div>
+        
     </section>
 
     <div class="soft-divider"></div>
@@ -1264,13 +1266,14 @@
                 <div class="pricing-header">
                     <h3>Starter</h3>
                 </div>
-                <div class="pricing-price">$599</div>
-                <p class="pricing-period">One-time payment</p>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">A clean, professional one-page website to get your business online and easy to contact. Best for businesses that want a simple, straightforward online presence.</p>
+                <div class="pricing-price">$649</div>
+                <p class="pricing-period">One-time payment. No monthly fee to us.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">A clean, professional one-page website to get your business online and make it easy to call, enquire, or book. Best for businesses that want a simple, straightforward online presence.</p>
                 <ul class="pricing-features">
-                    <li>One-page website</li>
+                    <li>Custom one-page website</li>
+                    <li>Hosting included</li>
                     <li>Up to 3 website sections</li>
-                    <li>Contact form (email delivery + spam protection)</li>
+                    <li>Contact form</li>
                     <li>Custom domain connection</li>
                     <li>1 round of revisions</li>
                 </ul>
@@ -1281,14 +1284,15 @@
                 <div class="pricing-header">
                     <h3>Plus</h3>
                 </div>
-                <div class="pricing-price">$799</div>
+                <div class="pricing-price">$849</div>
                 <p class="pricing-period">One-time payment</p>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Everything in Starter, with a more robust setup for Google and long-term growth. Best for businesses that want a more polished site and stronger foundations from day one.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Everything in Starter, with a more robust SEO and indexing setup for Google and long-term growth. Best for businesses that want a more polished site and stronger foundations from day one.</p>
                 <ul class="pricing-features">
                     <li>Everything in Starter</li>
                     <li>Up to 5 website sections</li>
-                    <li>Google indexing & verification setup</li>
-                    <li>Search-friendly site structure & metadata</li>
+                    <li>Search-friendly SEO</li>
+                    <li>Google indexing & verification</li>
+                    <li>Google analytics</li>
                     <li>2 total rounds of revisions</li>
                 </ul>
                 <a href="#contact" class="btn btn-primary">Get Started</a>
@@ -1350,10 +1354,10 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-header">
-            <h2>Ready To Get Your Business Online?</h2>
-            <p>If you don’t have a website yet, we make it easy to get one without stress, tech headaches, or long sales calls. No obligation – just a quick chat to see if it’s a good fit.</p>
+            <h2> Get Your Website</h2>
+            <p>If you don’t have a website yet, we can help you get one. Share a few details about your business and we’ll let you know if we’re a good fit. There’s no obligation.</p>
             <br>
-            <p>Australian-owned, serving local businesses nationwide.</p>
+            <p>Australian-owned, working with local businesses nationwide. 🐨</p>
         </div>
         
         <div class="contact-content">
@@ -1364,6 +1368,11 @@
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+                                
+                <div class="form-group">
+                    <label for="business">Business Name</label>
+                    <input type="text" id="business" name="business" required>
+                </div>
                 
                 <div class="form-group">
                     <label for="email">Email Address</label>
@@ -1371,23 +1380,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number <span style="color: var(--text-muted); font-weight: 400;">(optional)</span></label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Phone Number </label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="business">Business Name</label>
-                    <input type="text" id="business" name="business" required>
+                    <label for="message">Tell Us About Your Business</label>
+                    <textarea id="message" name="message" placeholder="What does your business do, and what would you like your website to include?" required></textarea>
                 </div>
                 
-                <div class="form-group">
-                    <label for="message">Tell Us About Your Project</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Enquiry</button>
             </form>
         </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <p>
+                ℹ️ We will only contact you about your website enquiry. We do not sell your information.
+            </p>
+        </div>
+
     </section>
     
     <div class="soft-divider"></div>
@@ -1403,7 +1414,7 @@
 
     <div class="faq-item">
         <div class="faq-question">
-            <h3>How many sections are included in the one-page website?</h3>
+            <h3>How many sections do I get on one page?</h3>
             <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
@@ -1418,13 +1429,13 @@
             <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-            <p>This service works best for local service-based businesses such as trades, studios, consultants, cafés, and small businesses that want a clear, professional online presence without ongoing complexity.</p>
+            <p>This service works best for local service-based businesses such as trades, studios, consultants, professionals, cafés, and small businesses that want a clear, professional online presence without ongoing complexity.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question">
-            <h3>Is this service suitable for businesses with large menus or frequently changing content?</h3>
+            <h3>Will this work if I have a big menu or lots of updates?</h3>
             <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
@@ -1435,7 +1446,7 @@
 
     <div class="faq-item">
         <div class="faq-question">
-            <h3>How long does it take to build my website?</h3>
+            <h3>How fast can you build it once I send my details?</h3>
             <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
@@ -1445,7 +1456,7 @@
 
     <div class="faq-item">
         <div class="faq-question">
-            <h3>Do I own the website after it's built?</h3>
+            <h3>Do I own my domain and website files?</h3>
             <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
@@ -1455,11 +1466,11 @@
 
     <div class="faq-item">
         <div class="faq-question">
-            <h3>Do I need to provide my own content and images?</h3>
+            <h3>What do you need from me to start?</h3>
             <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-            <p>Yes, you'll need to provide your business information, logo, and any photos you want included. We can guide you on what works best.</p>
+            <p>We'll need your business information, logo, and any photos you want included. We can guide you on what works best.</p>
         </div>
     </div>
 
@@ -1603,7 +1614,7 @@
                 const data = await response.json();
                 
                 if (data.success) {
-                    showNotification('Message sent! We\'ll get back to you shortly.');
+                    showNotification('Enquiry sent – We\'ll get back to you shortly.');
                     form.reset();
                 } else {
                     showNotification('Oops! Something went wrong. Please try again or email us directly at hello@sitestogo.co');
@@ -1613,7 +1624,7 @@
             } finally {
                 // Re-enable button
                 submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
+                submitButton.textContent = 'Send Enquiry';
             }
         });
         
