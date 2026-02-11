@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Sites To Go</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-cyan: #06b6d4;
+            --accent-light-cyan: #22d3ee;
+            --accent-purple: #8b5cf6;
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-sites {
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+        }
+        
+        .logo-togo {
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+            margin-left: 0.15em;
+        }
+        
+        .logo-togo::after {
+            content: " »";
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 5% 6rem 5%;
+        }
+        
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, var(--accent-light-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .last-updated {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-light-cyan);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        ul {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            padding: 3rem 5%;
+            background: var(--secondary-dark);
+            text-align: center;
+            border-top: 1px solid rgba(6, 182, 212, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        footer .logo {
+            margin-bottom: 1rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            margin: 0.25rem 0;
+            font-size: 0.8rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+            font-size: 0.85rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </a>
+    </nav>
+    
+    <div class="content">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last updated: <span id="year"></span></p>
+        
+        <p>These Terms of Service ("Terms") govern your use of Sites To Go's website design services. By engaging our services, you agree to these terms.</p>
+        
+        <h2>Service Scope</h2>
+        <p>Sites To Go provides simple, professional one-page websites for local businesses. Our service includes:</p>
+        <ul>
+            <li>Custom one-page website design and development</li>
+            <li>Website hosting (included)</li>
+            <li>Domain connection assistance (domain purchased separately by you)</li>
+            <li>Revision rounds as outlined in your chosen package</li>
+        </ul>
+        
+        <h2>What's Not Included</h2>
+        <p>Unless otherwise agreed in writing, our service does not include:</p>
+        <ul>
+            <li>Multi-page websites or complex site structures</li>
+            <li>E-commerce functionality or online stores</li>
+            <li>Membership systems or user login areas</li>
+            <li>Custom programming beyond standard website features</li>
+            <li>Blog platforms or content management systems</li>
+            <li>Ongoing maintenance or regular content updates</li>
+            <li>Domain name registration (you purchase this separately)</li>
+        </ul>
+        
+        <h2>Pricing and Payment</h2>
+        <p>Our pricing structure is:</p>
+        <ul>
+            <li>One-time payment for website creation</li>
+            <li>50% deposit required to begin work</li>
+            <li>50% final payment due before website launch</li>
+            <li>Website hosting is included in the price</li>
+            <li>No ongoing monthly fees to us</li>
+        </ul>
+        <p>Additional work beyond the agreed scope will be quoted separately.</p>
+        
+        <h2>Project Timeline</h2>
+        <p>We aim to complete most websites within 7-14 days from initial consultation. However, timelines depend on:</p>
+        <ul>
+            <li>How quickly you provide required content and feedback</li>
+            <li>Current project workload</li>
+            <li>Complexity of requirements</li>
+        </ul>
+        <p>We do not guarantee specific completion dates or ongoing website availability after launch.</p>
+        
+        <h2>Revisions</h2>
+        <p>Revisions are included as outlined in your chosen package:</p>
+        <ul>
+            <li>Starter package: 1 round of revisions</li>
+            <li>Plus package: 2 rounds of revisions</li>
+        </ul>
+        <p>Each revision round allows multiple feedback points to be addressed at once. Additional revisions beyond your package allowance will be quoted separately.</p>
+        
+        <h2>Content and Materials</h2>
+        <p>You are responsible for providing:</p>
+        <ul>
+            <li>Written content for your website</li>
+            <li>Business logo and branding materials</li>
+            <li>Photos and images</li>
+            <li>Accurate business information and contact details</li>
+        </ul>
+        <p>You warrant that you have the right to use all materials provided to us.</p>
+        
+        <h2>Ownership</h2>
+        <p>Upon full payment:</p>
+        <ul>
+            <li>You own your domain name (purchased separately by you)</li>
+            <li>You own all website files and can request them at any time</li>
+            <li>We provide hosting, but you are free to move your website elsewhere</li>
+        </ul>
+        
+        <h2>Hosting and Updates</h2>
+        <p>Hosting is included with your website at no ongoing cost to us. However:</p>
+        <ul>
+            <li>Website updates after launch are optional and quoted separately</li>
+            <li>We handle technical hosting management</li>
+            <li>We reserve the right to discontinue hosting with 90 days' notice (you would receive all files)</li>
+        </ul>
+        
+        <h2>Right to Decline</h2>
+        <p>We reserve the right to decline any project that:</p>
+        <ul>
+            <li>Falls outside our service scope</li>
+            <li>Is not a good fit for a one-page website format</li>
+            <li>Requires features we do not provide</li>
+        </ul>
+        
+        <h2>Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law:</p>
+        <ul>
+            <li>We are not liable for any business losses or missed opportunities</li>
+            <li>Our total liability is limited to the amount you paid for services</li>
+            <li>We do not guarantee specific business results or website traffic</li>
+        </ul>
+        
+        <h2>Cancellation</h2>
+        <p>If you cancel a project:</p>
+        <ul>
+            <li>Before work begins: Full refund of deposit</li>
+            <li>After work has commenced: Deposit is non-refundable, work completed to date may be billed</li>
+            <li>After final payment: No refund, but you receive all website files</li>
+        </ul>
+        
+        <h2>Governing Law</h2>
+        <p>These Terms are governed by the laws of Australia. Any disputes will be resolved in Australian courts.</p>
+        
+        <h2>Contact</h2>
+        <p>If you have questions about these Terms, contact us at: <a href="mailto:hello@sitestogo.co">hello@sitestogo.co</a></p>
+        
+        <h2>Changes to Terms</h2>
+        <p>We may update these Terms from time to time. Continued use of our services after changes constitutes acceptance of the updated Terms.</p>
+    </div>
+    
+    <footer>
+        <div class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p>&copy; <span id="yearFooter"></span> Sites To Go • Empowering local businesses with simple, professional websites.</p>
+    </footer>
+    
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById('year').textContent = year;
+        document.getElementById('yearFooter').textContent = year;
+    </script>
+</body>
+</html>
