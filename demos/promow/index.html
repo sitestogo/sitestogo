@@ -218,7 +218,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            padding: 1rem 5%;
+            padding: 1.5em 5%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -228,23 +228,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
         }
-        .bottom-call-bar::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -1px;
-    height: 3px;
-    background: linear-gradient(90deg,
-        rgba(29, 78, 216, 0.0),
-        rgba(29, 78, 216, 0.55),
-        rgba(226, 232, 240, 0.55),
-        rgba(200, 16, 46, 0.65),
-        rgba(200, 16, 46, 0.0)
-    );
-    pointer-events: none;
-    filter: blur(0.3px);
-}
+
 
         .bottom-call-bar .btn {
             padding: 0.9rem 2rem;
@@ -742,6 +726,13 @@
                 min-width: 0;
                 display: inline-flex;
 }
+    .btn-compact {
+        width: auto;
+        display: inline-flex;
+        padding-left: 2.2rem;
+        padding-right: 2.2rem;
+    }
+}
             .faq-question { padding: 1rem 1.25rem; }
             .faq-item.active .faq-answer { padding: 0.75rem 1.25rem 1rem 1.25rem; }
 
@@ -866,7 +857,7 @@
                     </p>
 
                     <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Contact us</a>
+                        <a href="#contact" class="btn btn-primary btn-compact">Contact us</a>
                     </div>
                 </div>
             </div>
