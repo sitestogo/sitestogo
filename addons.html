@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Ons & Extras | Sites To Go</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-cyan: #06b6d4;
+            --accent-light-cyan: #22d3ee;
+            --accent-purple: #8b5cf6;
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-sites {
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+        }
+        
+        .logo-togo {
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+            margin-left: 0.15em;
+        }
+        
+        .logo-togo::after {
+            content: " »";
+            font-weight: 600;
+            color: var(--accent-light-cyan);
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 140px 5% 6rem 5%;
+        }
+        
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, var(--accent-light-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .intro {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .category {
+            margin-bottom: 4rem;
+        }
+        
+        .category-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-light-cyan);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(6, 182, 212, 0.2);
+        }
+        
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .addon-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .addon-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+        
+        .addon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+        
+        .addon-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .addon-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            white-space: nowrap;
+        }
+        
+        .addon-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .note {
+            background: rgba(6, 182, 212, 0.1);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 1.5rem;
+            margin: 3rem 0;
+            border-radius: 5px;
+        }
+        
+        .note p {
+            color: var(--text-muted);
+            margin: 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        
+        .cta-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+        
+        footer {
+            padding: 3rem 5%;
+            background: var(--secondary-dark);
+            text-align: center;
+            border-top: 1px solid rgba(6, 182, 212, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 4rem;
+        }
+        
+        footer .logo {
+            margin-bottom: 1rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            margin: 0.25rem 0;
+            font-size: 0.8rem;
+        }
+        
+        footer p a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        
+        footer p a:hover {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 640px) {
+            .addon-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .addon-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </a>
+    </nav>
+    
+    <div class="content">
+        <h1>Add-Ons & Extras</h1>
+        <p class="intro">Optional extras for existing clients who want to enhance their website or need additional services beyond their package.</p>
+        
+        <div class="note">
+            <p><strong>Note:</strong> These are add-ons for clients with an existing Sites To Go website. If you don't have a website yet, <a href="index.html#pricing" style="color: var(--accent-cyan);">start with one of our packages</a>.</p>
+        </div>
+        
+        <!-- Website Enhancements -->
+        <div class="category">
+            <h2 class="category-title">Website Enhancements</h2>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Additional Section</h3>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Add another section to your one-page website (e.g. FAQ, gallery, team, pricing table).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Additional Page</h3>
+                        <span class="addon-price">$200</span>
+                    </div>
+                    <p class="addon-description">Add a separate page to your site (e.g. detailed services page, blog page, gallery).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Extra Revision Round</h3>
+                        <span class="addon-price">$125</span>
+                    </div>
+                    <p class="addon-description">Need more changes beyond your included revisions? Purchase additional rounds as needed.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Custom Contact Form</h3>
+                        <span class="addon-price">$150</span>
+                    </div>
+                    <p class="addon-description">Multi-step forms, conditional fields, file uploads, or custom form logic.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Integrations -->
+        <div class="category">
+            <h2 class="category-title">Integrations</h2>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Booking System Integration</h3>
+                        <span class="addon-price">$100</span>
+                    </div>
+                    <p class="addon-description">Integrate Calendly, Acuity, or similar booking tools into your website.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Google Maps Integration</h3>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Embed a custom Google Map showing your business location.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Payment Button Setup</h3>
+                        <span class="addon-price">$125</span>
+                    </div>
+                    <p class="addon-description">Add Stripe or PayPal payment buttons for simple transactions or deposits.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Social Media Feed</h3>
+                        <span class="addon-price">$100</span>
+                    </div>
+                    <p class="addon-description">Display your Instagram or Facebook feed directly on your website.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content & Design -->
+        <div class="category">
+            <h2 class="category-title">Content & Design</h2>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Copywriting</h3>
+                        <span class="addon-price">$200</span>
+                    </div>
+                    <p class="addon-description">Professional website copy written for you (up to 500 words).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Stock Photo Package</h3>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">We source and license 5-10 professional stock photos for your site.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Photo Editing</h3>
+                        <span class="addon-price">$50</span>
+                    </div>
+                    <p class="addon-description">Basic editing and optimization of your photos (up to 10 images).</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Basic Logo Design</h3>
+                        <span class="addon-price">$300</span>
+                    </div>
+                    <p class="addon-description">Simple text-based logo with 2 revision rounds. (Complex logos may be referred out.)</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SEO & Marketing -->
+        <div class="category">
+            <h2 class="category-title">SEO & Marketing</h2>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Google Business Profile Setup</h3>
+                        <span class="addon-price">$150</span>
+                    </div>
+                    <p class="addon-description">Full Google My Business profile setup and optimization for local search.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Advanced Local SEO</h3>
+                        <span class="addon-price">$400</span>
+                    </div>
+                    <p class="addon-description">Keyword research, schema markup, local citations, and enhanced on-page SEO.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Email Setup</h3>
+                        <span class="addon-price">$100</span>
+                    </div>
+                    <p class="addon-description">Professional email setup with Google Workspace (your subscription costs separate).</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ongoing Support -->
+        <div class="category">
+            <h2 class="category-title">Ongoing Support</h2>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Content Updates</h3>
+                        <span class="addon-price">$85/hour</span>
+                    </div>
+                    <p class="addon-description">Text changes, image swaps, contact detail updates after your free 30-day period.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Monthly Support Package</h3>
+                        <span class="addon-price">$75/month</span>
+                    </div>
+                    <p class="addon-description">Up to 1 hour of updates per month (text, images, minor changes). Unused time doesn't roll over.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Rush Service</h3>
+                        <span class="addon-price">+50%</span>
+                    </div>
+                    <p class="addon-description">Fast-track any add-on project to be completed within 3 business days.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Need Something Custom?</h2>
+            <p>Don't see what you're looking for? Get in touch and we'll provide a custom quote.</p>
+            <a href="index.html#contact" class="btn">Contact Us</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="logo">
+            <img src="assets/stg-logo.png" alt="Sites To Go Logo">
+            <span class="logo-sites">Sites</span>
+            <span class="logo-togo">to Go</span>
+        </div>
+        <p>
+            &copy; <span id="year"></span> Sites To Go • 
+            <a href="privacy.html">Privacy Policy</a> • 
+            <a href="terms.html">Terms of Service</a>
+            <br>
+            Empowering local businesses with simple, professional websites.
+        </p>
+    </footer>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
