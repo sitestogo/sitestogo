@@ -113,6 +113,80 @@
             margin-right: auto;
         }
         
+        /* What's Included Section */
+        .whats-included {
+            margin-bottom: 5rem;
+        }
+        
+        .whats-included h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .included-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .included-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .included-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .included-card li {
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .included-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+        
+        .info-banner {
+            background: rgba(6, 182, 212, 0.1);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 1.5rem;
+            margin: 3rem 0;
+            border-radius: 5px;
+        }
+        
+        .info-banner p {
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.8;
+        }
+        
         .category {
             margin-bottom: 4rem;
         }
@@ -260,6 +334,10 @@
         }
         
         @media (max-width: 640px) {
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .addon-grid {
                 grid-template-columns: 1fr;
             }
@@ -281,8 +359,55 @@
     </nav>
     
     <div class="content">
-        <h1>Optional Add-Ons</h1>
-        <p class="intro">Extras you can add to your website package, either upfront or anytime after launch.</p>
+        <h1>What's Included & Add-Ons</h1>
+        <p class="intro">See what comes standard with your package, and what extras you can add either upfront or anytime after launch.</p>
+        
+        <!-- What's Included Section -->
+        <section class="whats-included">
+            <h2>What's Included in Your Package</h2>
+            
+            <div class="included-grid">
+                <div class="included-card">
+                    <h3>✓ Included in Both Plans</h3>
+                    <ul>
+                        <li>Custom one-page website design</li>
+                        <li>Mobile-responsive (works on all devices)</li>
+                        <li>Contact form with spam protection</li>
+                        <li>Click-to-call phone & email buttons</li>
+                        <li>Google Maps location embed</li>
+                        <li>Social media icon links</li>
+                        <li>Services section (3-6 service cards)</li>
+                        <li>About section (company story, team intro)</li>
+                        <li>Testimonials section (3 reviews)</li>
+                        <li>Basic image gallery (5-10 photos)</li>
+                        <li>Opening hours display</li>
+                        <li>SSL security certificate</li>
+                        <li>Hosting included (no monthly fees)</li>
+                        <li>Domain connection & setup guidance</li>
+                        <li>Basic SEO (meta tags, headings, image optimization)</li>
+                    </ul>
+                </div>
+                
+                <div class="included-card">
+                    <h3>✓ Extra in Plus Package</h3>
+                    <ul>
+                        <li>Up to 5 sections (vs 3 in Starter)</li>
+                        <li>2 revision rounds (vs 1 in Starter)</li>
+                        <li>Basic FAQ section (5 questions)</li>
+                        <li>Enhanced SEO setup</li>
+                        <li>Sitemap & robots.txt</li>
+                        <li>Google Search Console submission</li>
+                        <li>Google Analytics setup</li>
+                        <li>Schema markup for local search</li>
+                        <li>Up to 6 testimonials (vs 3 in Starter)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-banner">
+                <p><strong>Section examples:</strong> Hero/Intro, Services, About, Team, Testimonials, Pricing Table, Gallery, FAQ, Contact. Each section counts toward your limit (3 for Starter, 5 for Plus).</p>
+            </div>
+        </section>
         
         <!-- Website Additions -->
         <div class="category">
@@ -293,23 +418,23 @@
                         <h3 class="addon-name">Extra Section</h3>
                         <span class="addon-price">$75</span>
                     </div>
-                    <p class="addon-description">Add another section to your one-page site beyond your package limit (e.g. FAQ, gallery, team, pricing table).</p>
+                    <p class="addon-description">Add another section beyond your package limit (e.g. extra services, pricing table, team bios).</p>
                 </div>
                 
                 <div class="addon-card">
                     <div class="addon-header">
                         <h3 class="addon-name">Additional Page</h3>
-                        <span class="addon-price">$200</span>
+                        <span class="addon-price">$250</span>
                     </div>
-                    <p class="addon-description">Add a separate page to your site with up to 3 sections (e.g. detailed services page, standalone gallery, about page).</p>
+                    <p class="addon-description">Add a separate page to your site (e.g. detailed services page, standalone gallery, about page with multiple sections).</p>
                 </div>
                 
                 <div class="addon-card">
                     <div class="addon-header">
-                        <h3 class="addon-name">Image Gallery</h3>
+                        <h3 class="addon-name">Extended Image Gallery</h3>
                         <span class="addon-price">$125</span>
                     </div>
-                    <p class="addon-description">Photo gallery section with lightbox viewing (up to 20 images).</p>
+                    <p class="addon-description">Professional photo gallery with lightbox viewing for 20+ images (basic 5-10 image gallery included in base package).</p>
                 </div>
                 
                 <div class="addon-card">
@@ -318,6 +443,14 @@
                         <span class="addon-price">$50</span>
                     </div>
                     <p class="addon-description">Embed YouTube or Vimeo video on your site with proper formatting.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Extended FAQ Section</h3>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Accordion-style FAQ with 10+ questions (Plus includes 5 questions, Starter has none).</p>
                 </div>
                 
                 <div class="addon-card">
@@ -333,7 +466,15 @@
                         <h3 class="addon-name">Before/After Slider</h3>
                         <span class="addon-price">$75</span>
                     </div>
-                    <p class="addon-description">Interactive before/after image comparison (great for renovations, transformations, etc).</p>
+                    <p class="addon-description">Interactive before/after image comparison (great for renovations, transformations, beauty services).</p>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Additional Testimonials</h3>
+                        <span class="addon-price">$75</span>
+                    </div>
+                    <p class="addon-description">Expand your testimonials section beyond what's included (3 in Starter, 6 in Plus).</p>
                 </div>
 
                 <div class="addon-card">
@@ -343,13 +484,12 @@
                     </div>
                     <p class="addon-description">GDPR-compliant cookie consent popup for websites with tracking or analytics.</p>
                 </div>
-                
             </div>
         </div>
         
         <!-- Simple Integrations -->
         <div class="category">
-            <h2 class="category-title">Simple Integrations</h2>
+            <h2 class="category-title">Integrations & Tools</h2>
             <div class="addon-grid">
                 <div class="addon-card">
                     <div class="addon-header">
@@ -357,14 +497,6 @@
                         <span class="addon-price">$75</span>
                     </div>
                     <p class="addon-description">Embed Calendly, Acuity Scheduling, or similar tools that provide an embed code. Does not include custom-built booking systems.</p>
-                </div>
-                
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <h3 class="addon-name">Google Maps</h3>
-                        <span class="addon-price">$50</span>
-                    </div>
-                    <p class="addon-description">Embed a map showing your business location.</p>
                 </div>
 
                 <div class="addon-card">
@@ -382,16 +514,22 @@
                     </div>
                     <p class="addon-description">Add a floating WhatsApp button so customers can message you directly.</p>
                 </div>
-                
+
                 <div class="addon-card">
                     <div class="addon-header">
                         <h3 class="addon-name">Live Chat Widget</h3>
                         <span class="addon-price">$75</span>
                     </div>
-                    <p class="addon-description">Add Tawk.to or similar free live chat widget for instant customer messaging (client creates free account, we integrate the code).</p>
+                    <p class="addon-description">Add Tawk.to or similar free live chat widget for instant customer messaging (you create free account, we integrate the code).</p>
                 </div>
 
-
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3 class="addon-name">Custom Contact Form</h3>
+                        <span class="addon-price">$100</span>
+                    </div>
+                    <p class="addon-description">Multi-step forms, conditional fields, file uploads, or custom form logic beyond the basic contact form.</p>
+                </div>
             </div>
         </div>
         
@@ -404,12 +542,12 @@
                         <h3 class="addon-name">Copywriting</h3>
                         <span class="addon-price">$150</span>
                     </div>
-                    <p class="addon-description">Professional website copy written for you (up to 400 words).</p>
+                    <p class="addon-description">Professional website copy written for you (up to 400 words - covers 1-2 sections).</p>
                 </div>
                 
                 <div class="addon-card">
                     <div class="addon-header">
-                        <h3 class="addon-name">Stock Photos</h3>
+                        <h3 class="addon-name">Stock Photo Sourcing</h3>
                         <span class="addon-price">$75</span>
                     </div>
                     <p class="addon-description">We find and provide up to 5 professionally-sourced stock photos relevant to your business. Images are optimized and ready to use.</p>
@@ -434,7 +572,7 @@
                         <h3 class="addon-name">Content Updates</h3>
                         <span class="addon-price">$85/hour</span>
                     </div>
-                    <p class="addon-description">Text changes, image swaps, or contact detail updates after your site is live.</p>
+                    <p class="addon-description">Text changes, image swaps, or contact detail updates after your site is live and past the free 30-day period.</p>
                 </div>
                 
                 <div class="addon-card">
@@ -442,7 +580,7 @@
                         <h3 class="addon-name">Extra Revision Round</h3>
                         <span class="addon-price">$125</span>
                     </div>
-                    <p class="addon-description">One additional round of changes (up to 10 feedback points submitted together). Larger scope changes quoted separately.</p>
+                    <p class="addon-description">One additional round of changes during the build process (up to 10 feedback points submitted together). Larger scope changes quoted separately.</p>
                 </div>
                 
                 <div class="addon-card">
@@ -474,8 +612,8 @@
         </div>
         <p>
             &copy; <span id="year"></span> Sites To Go • 
-            <a href="privacy.html">Privacy Policy</a> • 
-            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy</a> • 
+            <a href="terms.html">Terms</a>
             <br>
             Empowering local businesses with simple, professional websites.
         </p>
